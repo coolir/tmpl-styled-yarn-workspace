@@ -10,12 +10,13 @@
     "build": "lerna run prepare --parallel",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "lint": "npm run lint:js && npm run lint:style",
-    "lint:js": "eslint --ignore-path .gitignore .",
-    "lint:fix": "eslint --ignore-path .gitignore . --fix",
+    "lint:js": "eslint --ignore-path .gitignore 'packages/**/*.js'",
+    "lint:fix": "eslint --ignore-path .gitignore 'packages/**/*.js' --fix",
     "lint:style": "stylelint 'packages/**/*.js'",
     "pretest": "yarn lint",
     "test:watch": "jest --watch",
-    "test": "jest"
+    "test": "jest",
+    "storybook:uikit": "lerna run --stream --scope @__USERNAME__/ui-kit storybook"
   },
   "commitlint": {
     "extends": [
